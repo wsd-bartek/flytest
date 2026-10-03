@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "banc"
+version = "0.6.1"
+description = "Tools for the GridTape-TEM dataset of an adult female fly's Brain And Nerve Cord"
+readme.file = "README.md"
+readme.content-type = "text/markdown"
+license = {file = "LICENSE"}
+keywords = ["neuroscience", "connectomics", "Drosophila", "fruit fly", "brain", "VNC"]
+authors = [{name = "Jasper Phelps", email = "jasper.s.phelps@gmail.com"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.6"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "cloud-volume",
+    "python-catmaid",
+    "meshparty",
+    "navis",
+    "flybrains",
+    "transformix",
+    "nglui>=4.0.0",
+    "pyperclip",
+    "numpyimage",
+    "pandas",
+    "connected-components-3d",
+    "fill_voids",
+    "task-queue",
+    "caveclient>=8.0.0",
+    "cloud-files",
+    "urllib3",
+    "trimesh",
+    "pcg_skel",
+    "anytree",
+]
+
+[project.optional-dependencies]
+all = ["vtk"]
+
+[project.urls]
+Homepage = "https://banc.community"
+Repository = "https://github.com/jasper-tms/the-BANC-fly-connectome"
+
+[tool.setuptools.packages.find]
+include = ["banc*"]
+
+[tool.setuptools.package-data]
+"banc.transforms" = ["transform_parameters/*.txt"]
